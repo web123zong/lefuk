@@ -62,6 +62,8 @@ Page({
             mobile: wx.getStorageSync('mobile'),
             credit: wx.getStorageSync('credit'),
             openids: wx.getStorageSync('openid'),
+            pwd: wx.getStorageSync('pwd'),
+            verification: wx.getStorageSync('verification'),
           }, function(t) {
             1 == t.isblack && wx.showModal({
                 title: "无法访问",
