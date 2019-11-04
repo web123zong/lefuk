@@ -27,7 +27,8 @@
                 <view class="avatar">
                     <image class="icon" src="{{member.avatar||'/static/images/noface.png'}}"></image>
                 </view>
-                <view class="nickname">{{member.nickname||'未更新用户信息'}}</view>
+                <view class="nickname" wx:if="{{nologin == 1}}">{{member.nickname}}</view>
+                <view class="nickname" bindtap="goLogin" wx:if="{{nologin == 0}}">点击此处授权登陆</view>
                 <view class="level">{{member.levelname}}</view>
             </view>
             <view class="child">

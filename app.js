@@ -4,12 +4,18 @@ App({
     onShow: function() {
         this.onLaunch();
     },
-    onLaunch: function() {
-        var e = this;
+  onLaunch: function (o) {
+       var e = this;
+        if (o && o.referrerInfo.hasOwnProperty('extraData')) {
+          wx.setStorageSync('username', o.referrerInfo.extraData.username || '');
+          wx.setStorageSync('mobile', o.referrerInfo.extraData.mobile || '');
+          wx.setStorageSync('credit', o.referrerInfo.extraData.credit || '');
+          wx.setStorageSync('openid', o.referrerInfo.extraData.openid || '');
+        }
         wx.getSystemInfo({
-            success: function(t) {
-                "0" == t.model.indexOf("iPhone X") ? e.setCache("isIpx", t.model) : e.setCache("isIpx", "");
-            }
+          success: function(t) {
+              "0" == t.model.indexOf("iPhone X") ? e.setCache("isIpx", t.model) : e.setCache("isIpx", "");
+          }
         });
         var t = this;
         wx.getSystemInfo({

@@ -6,6 +6,7 @@
         <view class="text" wx:if="{{!close}}">小程序需要获取您的授权<text>
 </text>才能为您提供后续服务哦</view>
         <button bindgetuserinfo="bindGetUserInfo" class="btn" openType="getUserInfo" wx:if="{{!close}}">点击授权</button>
+        <view class="btn" bindtap="goself"  style="background:#f2f2f2;color:#999">暂不登录</view>
         <view class="text" wx:if="{{close}}">{{text}}</view>
     </view>
 </view>
