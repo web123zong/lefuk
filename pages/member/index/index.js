@@ -17,7 +17,7 @@ Page({
     interval: 5e3,
     duration: 500,
     swiperheight: 0,
-    iscycelbuy: !1,
+    iscycelbuy: 0,
     bargain: !1
   },
   onLoad: function(a) {
@@ -52,7 +52,7 @@ Page({
         phone: a.phone,
         phonecolor: a.phonecolor,
         phonenumber: a.phonenumber,
-        iscycelbuy: a.iscycelbuy,
+        //iscycelbuy: a.iscycelbuy,
         bargain: a.bargain
       }), t.wxParse("wxParseData", "html", a.copyright, e, "5");
     });
