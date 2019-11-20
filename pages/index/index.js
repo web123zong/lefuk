@@ -57,6 +57,7 @@ Page((e = {
         specs: [],
         options: [],
         diyform: {},
+        mpwd:'',
         specsTitle: ""
     }, t(a, "total", 1), t(a, "active", ""), t(a, "slider", ""), t(a, "tempname", ""), 
     t(a, "buyType", ""), t(a, "areas", []), t(a, "closeBtn", !1), t(a, "soundpic", !0), 
@@ -64,9 +65,41 @@ Page((e = {
     t(a, "showcoupontips", !1), t(a, "topmenu", {}), t(a, "topmenuDataType", ""), t(a, "tabbarData", {}), 
     t(a, "tabbarDataType", ""), t(a, "istopmenu", !1), t(a, "seckillinfo", {}), t(a, "timer", 0), 
     t(a, "lasttime", 0), t(a, "hour", "-"), t(a, "min", "-"), t(a, "sec", "-"), a),
+    pwdinput:function(e){
+      this.setData({
+        mpwd:e.detail.value
+      })
+    },
+    ckeckpwd:function(){
+      var t = this;
+      if (t.data.mpwd == ''){
+        wx.showToast({
+          title: '请输入密码',
+          icon:'none'
+        })
+        return
+      }
+      s.get("shop/check_pwd", {
+        pwd: t.data.mpwd,
+      }, function (a) {
+        
+      });
+    },
+
     getShop: function() {
         var t = this;
         s.get("shop/get_shopindex", {}, function(a) {
+            if (a.member_info){
+              if (a.member_info.pwd != ''){
+                t.setData({
+                  showPwd:true  
+                })
+              }else{
+                t.setData({
+                  showPwd: false
+                })
+              }
+            }
             n.wxParse("wxParseData", "html", a.copyright, t, "5"), t.setData({
                 shop: a
             });

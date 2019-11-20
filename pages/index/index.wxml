@@ -142,3 +142,13 @@
         <i bindtap="closecoupon" class="icox icox-guanbi-copy"></i>
     </view>
 </view>
+
+
+<!-- 弹窗 -->
+<view class="li-fuimodal flex flex-align-center flex-pack-center" catchtouchmove="true" wx:if="{{showPwd}}">
+  <view class="li-fuicontent">
+    <view class="m-title">密码验证</view>
+    <input placeholder="请输入密码" class="m-pwd" bindinput="pwdinput"></input>
+    <view  class="m-pwd m-btn" bindtap="ckeckpwd">确定</view>
+  </view>
+</view>
