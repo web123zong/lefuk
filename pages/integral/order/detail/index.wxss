@@ -1,4 +1,4 @@
-@import "../../../../__wuBaseWxss__/8.wxss";
+@import "../../../../wuBaseWxss/8.wxss";
 
 .bg {
     background: linear-gradient(to right,#ff795a 0%,#ff4141 100%);

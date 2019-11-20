@@ -1,4 +1,4 @@
-@import "../../__wuBaseWxss__/0.wxss";
+@import "../../wuBaseWxss/0.wxss";
 
 .fui-tabbar {
     margin-bottom: 2px;
@@ -1414,7 +1414,7 @@ image.radius {
     height: 60rpx;
 }
 
-@import "../../__wuBaseWxss__/0.wxss";
+@import "../../wuBaseWxss/0.wxss";
 
 canvas {
     display: block!important;
