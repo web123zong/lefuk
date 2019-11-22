@@ -130,18 +130,19 @@ Page((e = {
     onLoad: function(t) {
         t = t || {};
         var a = this;
-        s.get("shop.sync_member_date",{
+      if (i.globalData.isjump == 1){
+        s.get("shop.sync_member_date", {
           username: wx.getStorageSync('username'),
           mobile: wx.getStorageSync('mobile'),
           credit: wx.getStorageSync('credit'),
           openids: wx.getStorageSync('openid'),
           pwd: wx.getStorageSync('pwd'),
           verification: wx.getStorageSync('verification'),
-        },function(res){
+        }, function (res) {
           console.log(res)
         })
-
-        a.setData({
+      } 
+       a.setData({
             imgUrl: i.globalData.approot
         }), s.get("black", {}, function(t) {
             t.isblack && wx.showModal({

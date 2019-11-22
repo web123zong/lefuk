@@ -1,12 +1,13 @@
 var e = require("utils/core.js");
 
 App({
-    onShow: function() {
-        this.onLaunch();
-    },
+  onShow: function() {
+      // this.onLaunch();
+  },
   onLaunch: function (o) {
        var e = this;
         if (o && o.referrerInfo.hasOwnProperty('extraData')) {
+          e.globalData.isjump = 1;
           wx.setStorageSync('username', o.referrerInfo.extraData.username || '');
           wx.setStorageSync('mobile', o.referrerInfo.extraData.mobile || '');
           wx.setStorageSync('credit', o.referrerInfo.extraData.credit || '');
@@ -146,6 +147,7 @@ App({
       appid: "wxb9fd8a43445f4bd8",
       api: "https://mall.wwejpt.com/app/ewei_shopv2_api.php?i=1",
       approot: "https://mall.wwejpt.com/addons/ewei_shopv2/",
-        userInfo: null
+      userInfo: null,
+      isjump:'',
     }
 });
