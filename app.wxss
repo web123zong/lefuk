@@ -6096,3 +6096,40 @@ rich-text img {
    -webkit-justify-content: space-around;	
   justify-content: space-around;
 }
+.li-fuimodal{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
+.li-fuicontent{
+  width: 80%;
+  height: 350rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.li-fuicontent .m-title{
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #666;
+}
+.li-fuicontent .m-pwd{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  text-align: center;
+}
+.m-btn{
+  color: #fff;
+  background: #ff5555;
+  margin-top: 50rpx;
+}
+view{
+  box-sizing: border-box;
+}

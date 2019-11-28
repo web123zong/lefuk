@@ -47,6 +47,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 0,
 			"list": [
@@ -60,6 +64,19 @@
 						"appId": "wxb9fd8a43445f4bd9",
 						"extraData": "{\"username\":\"李蒙蒙\" , \"mobile\":\"18680504811\" , \"credit\":\"300\" , \"openid\":\"598956352\"}"
 					}
+				},
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/member/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "更换绑定手机",
+					"pathName": "pages/member/bind/index",
+					"scene": null
 				}
 			]
 		}
