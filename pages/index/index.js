@@ -136,7 +136,7 @@ Page((e = {
           username: wx.getStorageSync('username'),
           mobile: wx.getStorageSync('mobile'),
           credit: wx.getStorageSync('credit'),
-          openids: wx.getStorageSync('openid'),
+          // openids: wx.getStorageSync('openid'),
           pwd: wx.getStorageSync('pwd'),
           verification: wx.getStorageSync('verification'),
         }, function (res) {

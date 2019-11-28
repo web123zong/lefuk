@@ -11,7 +11,7 @@ App({
           wx.setStorageSync('username', o.referrerInfo.extraData.username || '');
           wx.setStorageSync('mobile', o.referrerInfo.extraData.mobile || '');
           wx.setStorageSync('credit', o.referrerInfo.extraData.credit || '');
-          wx.setStorageSync('openid', o.referrerInfo.extraData.openid || '');
+          // wx.setStorageSync('openid', o.referrerInfo.extraData.openid || '');
           wx.setStorageSync('pwd', o.referrerInfo.extraData.pwd || '');
           wx.setStorageSync('verification', o.referrerInfo.extraData.verification || '');
         }

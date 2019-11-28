@@ -39,7 +39,6 @@ Page({
   },
   //关闭弹窗
   closePhone:function(){
-    console.log(11)
     this.setData({
       showPhone: false
     })
@@ -134,9 +133,11 @@ Page({
     });
   },
   goLogin: function () {
-    this.setData({
-      showPhone:true
-    })
+    if (e.globalData.isjump == ''){
+      this.setData({
+        showPhone: true
+      })
+    }
   },
   getInfo: function() {
     var e = this;
