@@ -103,13 +103,13 @@
                 <view class="fui-cell-text">我的会员卡</view>
                 <view class="fui-cell-remark"></view>
             </navigator>
-            <navigator class="fui-cell" hoverClass="none" url="/pages/bargain/index/index" wx:if="{{member.bargain}}">
+            <!-- <navigator class="fui-cell" hoverClass="none" url="/pages/bargain/index/index" wx:if="{{member.bargain}}">
                 <view class="fui-cell-icon">
                     <text class="icox icox-bargain"></text>
                 </view>
                 <view class="fui-cell-text">砍价首页</view>
                 <view class="fui-cell-remark"></view>
-            </navigator>
+            </navigator> -->
             <navigator class="fui-cell" hoverClass="none" url="/pages/web/index?module=sign&domain={{member.sign_url_domain}}&params={{member.sign_url_params}}&mid={{member.id}}" wx:if="{{member.hassign}}">
                 <view class="fui-cell-icon">
                     <text class="icox icox-qiandao"></text>
