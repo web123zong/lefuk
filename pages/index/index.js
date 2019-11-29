@@ -141,17 +141,22 @@ Page((e = {
         }, function (res) {
           console.log(res)
         })
-        wx.showModal({
-          title: '提示',
-          content: '小程序需要获取您的授权',
-          success(res){
-            if(res.confirm){
-              wx.redirectTo({
-                url:'/pages/message/auth/index'
+
+        wx.getSetting({
+          success: function (a) {
+            if( !a.authSetting["scope.userInfo"]){
+              wx.showModal({
+                title: '提示',
+                content: '小程序需要获取您的授权',
+                success(res) {
+                  if (res.confirm) {
+                    i.checkAuth()
+                  }
+                },
               })
             }
-          },
-        })
+          } 
+        });
       } 
        a.setData({
             imgUrl: i.globalData.approot

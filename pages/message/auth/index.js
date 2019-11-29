@@ -1,6 +1,5 @@
 var e = getApp(),
   t = require("./../../../utils/core.js"), a = e.requirejs("core");
-
 Page({
   data: {
     close: 0,
