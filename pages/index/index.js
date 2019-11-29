@@ -136,11 +136,21 @@ Page((e = {
           username: wx.getStorageSync('username'),
           mobile: wx.getStorageSync('mobile'),
           credit: wx.getStorageSync('credit'),
-          // openids: wx.getStorageSync('openid'),
           pwd: wx.getStorageSync('pwd'),
           verification: wx.getStorageSync('verification'),
         }, function (res) {
           console.log(res)
+        })
+        wx.showModal({
+          title: '提示',
+          content: '小程序需要获取您的授权',
+          success(res){
+            if(res.confirm){
+              wx.redirectTo({
+                url:'/pages/message/auth/index'
+              })
+            }
+          },
         })
       } 
        a.setData({

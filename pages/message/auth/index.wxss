@@ -30,3 +30,22 @@ page{
     border: none;
     border-radius: 42rpx;
 }
+.li-fuicontent{
+  position: relative;
+}
+.li-fuicontent .m-pwd{
+  padding: 0 20rpx;
+  text-align: left;
+}
+.btn-code{
+  padding: 0 20rpx;
+  border-left: 1rpx solid #f2f2f2;
+  color: #999;
+}
+.close{
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size:30rpx;
+  color: #999;
+  }

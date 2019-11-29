@@ -246,16 +246,3 @@
 <view bindtap="phone" class="phone" style="background-color:{{phonecolor}}" wx:if="{{phone==1}}">
     <text class="icox icox-dianhua"></text>
 </view>
-
-<!-- 授权手机号的弹窗 -->
-<view class="li-fuimodal flex flex-align-center flex-pack-center" catchtouchmove="true" wx:if="{{showPhone}}">
-  <view class="li-fuicontent">
-    <input placeholder="请输入手机号" type="number" class="m-pwd" data-type="phone" bindinput="pwdinput" style=" border-bottom: 1rpx solid #f2f2f2;width:85%"></input>
-    <view class="flex flex-align-center">
-       <input placeholder="请输入验证码" type="number" class="m-pwd flex-1" data-type="code" bindinput="pwdinput"></input>
-       <view class="btn-code" bindtap="getcode">获取验证码</view>       
-    </view>
-    <view  class="m-pwd m-btn" bindtap="ckeckpwd" style="text-align:center">确定</view>
-    <view class="close" catchtap="closePhone">X</view>
-  </view>
-</view>

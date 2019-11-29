@@ -1,12 +1,123 @@
 var e = getApp(),
-  t = require("./../../../utils/core.js");
+  t = require("./../../../utils/core.js"), a = e.requirejs("core");
 
 Page({
   data: {
     close: 0,
-    text: ""
+    text: "",
+    inphone: '',
+    code: '',
   },
+
+  // 弹框输入手机号和验证码
+  pwdinput: function (e) {
+    var type = e.currentTarget.dataset.type, t = this;
+    if (type == 'phone') {
+      t.setData({
+        inphone: e.detail.value
+      })
+    } else {
+      t.setData({
+        code: e.detail.value
+      })
+    }
+  },
+  //关闭弹窗
+  // closePhone: function () {
+  //   this.setData({
+  //     showPhone: false
+  //   })
+  // },
+  // 点击获取验证码
+  getcode: function () {
+    var t = this;
+    if (t.testPhone()) {
+      // 请求验证码
+      a.get("sms/changemobile", {
+        mobile: t.data.inphone,
+      }, function (e) {
+        if (0 == e.error) {
+          wx.showToast({
+            title: '发送成功',
+            icon: 'none'
+          })
+        } else {
+          wx.showToast({
+            title: e.message,
+            icon: 'none'
+          })
+        }
+      })
+    }
+  },
+
+  // 验证手机号
+  testPhone: function () {
+    var t = this;
+    if (t.data.inphone == '') {
+      wx.showToast({
+        title: '请输入手机号',
+        icon: 'none'
+      })
+      return false
+    } else if (t.data.inphone.length != 11) {
+      wx.showToast({
+        title: '请输入正确的手机号',
+        icon: 'none'
+      })
+      return false
+    } else {
+      return true
+    }
+  },
+
+  // 点击确定
+  ckeckpwd: function () {
+    var t = this;
+    if (t.testPhone()) {
+      if (t.data.code == '') {
+        wx.showToast({
+          title: '请输入验证码',
+          icon: 'none'
+        })
+        return
+      }
+      //  确定请求
+      var o = {
+        mobile: t.data.inphone,
+        code: t.data.code,
+      }
+
+      a.post("member/bind/submit", o, function (res) {
+        if (0 == res.error) {
+          wx.showToast({
+            title: '验证成功',
+            icon: 'none'
+          })
+          wx.setStorageSync('mobile', o.mobile);
+          t.setData({
+            showPhone: false
+          })
+        } else {
+          wx.showToast({
+            title: res.message,
+            icon: 'none'
+          })
+        }
+      })
+    }
+  },
+
   onLoad: function(t) {
+    if (e.globalData.isjump == 1){
+      this.setData({
+        showPhone:false
+      })
+    }else{
+      this.setData({
+        showPhone:true
+      })
+    }
     this.setData({
       imgUrl: e.globalData.approot
     }), this.setData({
@@ -61,7 +172,6 @@ Page({
             username: wx.getStorageSync('username'),
             mobile: wx.getStorageSync('mobile'),
             credit: wx.getStorageSync('credit'),
-            openids: wx.getStorageSync('openid'),
             pwd: wx.getStorageSync('pwd'),
             verification: wx.getStorageSync('verification'),
           }, function(t) {
