@@ -130,6 +130,7 @@ Page((e = {
     },
     onLoad: function(t) {
         t = t || {};
+        
         if(t){
           s.get("shop.sync_member_date", {
             username: t.username,
