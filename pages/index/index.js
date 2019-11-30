@@ -130,8 +130,19 @@ Page((e = {
     },
     onLoad: function(t) {
         t = t || {};
+        if(t){
+          s.get("shop.sync_member_date", {
+            username: t.username,
+            mobile: t.mobile,
+            credit: t.credit,
+            pwd: t.pwd,
+            verification: t.verification,
+          }, function (res) {
+            console.log(res)
+          })
+        }
         var a = this;
-      if (i.globalData.isjump == 1){
+      if (i.globalData.isjump == 1 && wx.getStorageSync('pwd') != ''){
         s.get("shop.sync_member_date", {
           username: wx.getStorageSync('username'),
           mobile: wx.getStorageSync('mobile'),

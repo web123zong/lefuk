@@ -173,6 +173,7 @@ Page({
             credit: wx.getStorageSync('credit'),
             pwd: wx.getStorageSync('pwd'),
             verification: wx.getStorageSync('verification'),
+            isjump: e.globalData.isjump
           }, function(t) {
             1 == t.isblack && wx.showModal({
                 title: "无法访问",

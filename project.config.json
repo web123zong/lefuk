@@ -76,7 +76,18 @@
 					"id": -1,
 					"name": "更换绑定手机",
 					"pathName": "pages/member/bind/index",
+					"query": "",
 					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "模拟公众号",
+					"pathName": "pages/index/index",
+					"query": "username=\"李蒙蒙\" &mobile=\"18680504811\" &credit=\"300\"&pwd=\"123456\"&verification=\"3322\"",
+					"scene": 1043,
+					"referrerInfo": {
+						"appId": "wxb9fd8a43445f4bd8"
+					}
 				}
 			]
 		}

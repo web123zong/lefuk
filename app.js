@@ -150,6 +150,6 @@ App({
       api: "https://mall.wwejpt.com/app/ewei_shopv2_api.php?i=1",
       approot: "https://mall.wwejpt.com/addons/ewei_shopv2/",
       userInfo: null,
-      isjump:'',
+      isjump:0,
     }
 });
