@@ -62,7 +62,7 @@
 					"scene": 1037,
 					"referrerInfo": {
 						"appId": "wxb9fd8a43445f4bd9",
-						"extraData": "{\"username\":\"李蒙蒙\" , \"mobile\":\"18680504811\" , \"credit\":\"300\" , \"openid\":\"598956352\"}"
+						"extraData": "{\"username\":\"李蒙蒙\", \"mobile\":18680504811, \"credit\":300, \"verification\":\"8acee3140c41108cde3fa25facc67f3a\",\"pwd\":\"123456\"}"
 					}
 				},
 				{
@@ -83,7 +83,7 @@
 					"id": 3,
 					"name": "模拟公众号",
 					"pathName": "pages/index/index",
-					"query": "username=\"李蒙蒙\" &mobile=\"18680504811\" &credit=\"300\"&pwd=\"123456\"&verification=\"3322\"",
+					"query": "username=李蒙蒙&mobile=18680504811&credit=300&pwd=123456&verification=8acee3140c41108cde3fa25facc67f3a",
 					"scene": 1043,
 					"referrerInfo": {
 						"appId": "wxb9fd8a43445f4bd8"

@@ -161,9 +161,13 @@ Page({
     var c = "/" + o + "?" + (s = i.substring(0, i.length - 1));
     console.log(c), wx.login({
       success: function(a) {
+        // wx.showModal({
+        //   title: '测试数据',
+        //   content: 'verification:' + wx.getStorageSync('verification') + ',username:' + wx.getStorageSync('username'),
+        // })
         t.post("wxapp/login", {
           code: a.code
-        }, function(a) {
+        }, function (a) {
           a.error ? t.alert("获取用户登录态失败:" + a.message) : t.get("wxapp/auth", {
             data: n.detail.encryptedData,
             iv: n.detail.iv,
@@ -174,14 +178,14 @@ Page({
             pwd: wx.getStorageSync('pwd'),
             verification: wx.getStorageSync('verification'),
             isjump: e.globalData.isjump
-          }, function(t) {
+          }, function (t) {
             1 == t.isblack && wx.showModal({
-                title: "无法访问",
-                content: "您在商城的黑名单中，无权访问！",
-                success: function(t) {
-                  t.confirm && e.close(), t.cancel && e.close();
-                }
-              }), n.detail.userInfo.openid = t.openId, n.detail.userInfo.id = t.id, n.detail.userInfo.uniacid = t.uniacid,
+              title: "无法访问",
+              content: "您在商城的黑名单中，无权访问！",
+              success: function (t) {
+                t.confirm && e.close(), t.cancel && e.close();
+              }
+            }), n.detail.userInfo.openid = t.openId, n.detail.userInfo.id = t.id, n.detail.userInfo.uniacid = t.uniacid,
               e.setCache("userinfo", n.detail.userInfo), e.setCache("userinfo_openid", n.detail.userInfo.openid),
               e.setCache("userinfo_id", t.id), e.getSet(), wx.reLaunch({
                 url: c
