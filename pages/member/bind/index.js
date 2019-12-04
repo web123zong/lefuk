@@ -87,19 +87,18 @@ Page({
   },
   submit: function(e) {
     if (!this.data.submit) {
-      var a = this,
-        o = this.data.postData;
-      s.isMobile(o.mobile) ? 5 == o.code.length ? (this.setData({
+      var a = this, o = this.data.postData;
+      s.isMobile(o.mobile) ? 5 == o.code.length ? o.password && "" != o.password ? o.password1 && "" != o.password1 ? o.password == o.password1 ? (this.setData({
         submit: !0,
         subtext: "正在绑定..."
-      }), t.post("member/bind/submit", o, function(e) {
+      }), t.post("member/bind/submit", o, function (e) {
         if (92001 != e.error && 92002 != e.error) return 0 != e.error ? (i.toast(a, e.message),
           void a.setData({
             submit: !1,
             subtext: "立即绑定"
           })) : void wx.navigateBack();
-        t.confirm(e.message, function() {
-          o.confirm = 1, t.post("member/bind/submit", o, function(e) {
+        t.confirm(e.message, function () {
+          o.confirm = 1, t.post("member/bind/submit", o, function (e) {
             e.error > 0 ? i.toast(a, e.message) : wx.navigateBack(), a.setData({
               submit: !1,
               subtext: "立即绑定",
@@ -107,7 +106,7 @@ Page({
             });
           }, !0, !0, !0);
         });
-      }, !0, !0, !0)) : i.toast(this, "请填写5位短信验证码") : i.toast(this, "请填写正确的手机号");
+      }, !0, !0, !0)) : i.toast(this, "两次输入的密码不一致") : i.toast(this, "请确认登录密码") : i.toast(this, "请填写登录密码") : i.toast(this, "请填写5位短信验证码") : i.toast(this, "请填写正确的手机号");
     }
   },
   imageChange: function() {

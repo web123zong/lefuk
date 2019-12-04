@@ -87,7 +87,7 @@ Page({
         code: t.data.code,
       }
 
-      a.post("member/bind/submit", o, function (res) {
+      a.post("member/bind/submit_mobile", o, function (res) {
         if (0 == res.error) {
           wx.showToast({
             title: '验证成功',
@@ -172,11 +172,11 @@ Page({
             data: n.detail.encryptedData,
             iv: n.detail.iv,
             sessionKey: a.session_key,
-            username: wx.getStorageSync('username'),
+            // username: wx.getStorageSync('username'),
             mobile: wx.getStorageSync('mobile'),
             credit: wx.getStorageSync('credit'),
             pwd: wx.getStorageSync('pwd'),
-            verification: wx.getStorageSync('verification'),
+            // verification: wx.getStorageSync('verification'),
             isjump: e.globalData.isjump
           }, function (t) {
             1 == t.isblack && wx.showModal({

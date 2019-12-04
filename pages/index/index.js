@@ -112,6 +112,7 @@ Page((e = {
   //         });
   //     });
   // },
+
   onReachBottom: function() {
     this.data.loaded || this.data.storeRecommand.length == this.data.total || this.getRecommand();
   },
@@ -136,19 +137,19 @@ Page((e = {
   },
   onLoad: function(t) {
     t = t || {};
-    if (t.username || t.mobile || t.credit || t.pwd || t.verification) {
+    if ( t.mobile || t.credit || t.pwd) {
       i.globalData.isjump = 1;
-      wx.setStorageSync('username', t.username);
+      // wx.setStorageSync('username', t.username);
       wx.setStorageSync('mobile', t.mobile);
       wx.setStorageSync('credit', t.credit);
       wx.setStorageSync('pwd', t.pwd);
-      wx.setStorageSync('verification', t.verification);
+      // wx.setStorageSync('verification', t.verification);
       s.get("shop.sync_member_date", {
-        username: t.username,
+        // username: t.username,
         mobile: t.mobile,
         credit: t.credit,
         pwd: t.pwd,
-        verification: t.verification,
+        // verification: t.verification,
       }, function(res) {
         console.log(res)
       })
@@ -244,7 +245,8 @@ Page((e = {
     var t = this,
       a = wx.getSystemInfoSync(),
       e = i.getCache("sysset");
-    t.getShop(), t.getRecommand(), t.get_hasnewcoupon(), t.get_cpinfos(), wx.getSetting({
+    // t.getShop(), 
+    t.getRecommand(), t.get_hasnewcoupon(), t.get_cpinfos(), wx.getSetting({
       success: function(a) {
         var e = a.authSetting["scope.userInfo"];
         t.setData({
