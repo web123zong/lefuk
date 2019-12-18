@@ -6,17 +6,6 @@ App({
   },
   onLaunch: function (o) {
        var e = this;
-       console.log('小程序的入口',o)
-        if (o && o.referrerInfo.hasOwnProperty('extraData')) {
-          console.log('条转过来的参数', o.referrerInfo.extraData)
-          e.globalData.isjump = 1;
-          wx.setStorageSync('username', o.referrerInfo.extraData.username || '');
-          wx.setStorageSync('mobile', o.referrerInfo.extraData.mobile || '');
-          wx.setStorageSync('credit', o.referrerInfo.extraData.credit || '');
-          // wx.setStorageSync('openid', o.referrerInfo.extraData.openid || '');
-          wx.setStorageSync('pwd', o.referrerInfo.extraData.pwd || '');
-          wx.setStorageSync('verification', o.referrerInfo.extraData.verification || '');
-        }
         wx.getSystemInfo({
           success: function(t) {
               "0" == t.model.indexOf("iPhone X") ? e.setCache("isIpx", t.model) : e.setCache("isIpx", "");
