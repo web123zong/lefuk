@@ -88,6 +88,20 @@
 					"referrerInfo": {
 						"appId": "wxb9fd8a43445f4bd8"
 					}
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/order/create/index",
+					"query": "id=222&total=2&optionid=&giftid=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请退款",
+					"pathName": "pages/order/refund/index",
+					"query": "id=290",
+					"scene": null
 				}
 			]
 		}

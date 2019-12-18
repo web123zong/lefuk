@@ -162,7 +162,7 @@
     </view>
     <block wx:if="{{order.virtual>0&&order.virtual_str!=''}}">
         <block wx:if="{{ordervirtualtype&&ordervirtual.length>0}}">
-            <view class="fui-cell-group {{toggleCode?'toggleSend-group':''}}" wx:for="{{ordervirtual}}">
+            <!-- <view class="fui-cell-group {{toggleCode?'toggleSend-group':''}}" wx:for="{{ordervirtual}}">
                 <view class="fui-cell-title">发货信息{{ordervirtual.length>1?index+1:''}}</view>
                 <view class="fui-cell" wx:for="{{item}}" wx:for-item="item2">
                     <view class="fui-cell-label">
@@ -172,7 +172,7 @@
                         <text class="fui-cell-label" selectable="true">{{item2.value}}</text>
                     </view>
                 </view>
-            </view>
+            </view> -->
         </block>
         <view class="fui-cell-group" wx:else>
             <view class="fui-cell-title">发货信息</view>

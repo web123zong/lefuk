@@ -411,8 +411,11 @@
             <navigator class="btn btn-default btn-default-o btn-sm" url="/pages/order/comment/index?id={{order.id}}" wx:if="{{order.cancomment2}}">追加评价</navigator>
             <navigator class="btn btn-default btn-default-o btn-sm" url="/pages/order/comment/index?id={{order.id}}" wx:if="{{order.cancomment}}">评价</navigator>
             <view bindtap="finish" class="btn btn-default btn-default-o btn-sm" wx:if="{{order.cancomplete&&order.iscycelbuy==0&&!order.isonlyverifygoods}}">确认收货</view>
+
             <navigator class="btn btn-default btn-sm" url="/pages/order/refund/index?id={{order.id}}" wx:if="{{order.canrefund&&order.iscycelbuy==0}}">{{order.refundtext}}</navigator>
+
             <navigator class="btn btn-default btn-sm" url="/pages/order/refund/index?id={{order.id}}" wx:if="{{order.canrefund&&order.iscycelbuy==1&&order.status==1}}">{{order.refundtext}}</navigator>
+            
             <view bindtap="refundcancel" class="btn btn-default-o btn-sm btn-cancel" wx:if="{{order.cancancelrefund}}">取消申请</view>
         </block>
         <block wx:if="{{order.canrestore}}">

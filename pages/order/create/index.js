@@ -57,8 +57,9 @@ Page({
             bargainid: t.bargainid
         }), e.url(t), console.log(i.data.options), a.get("order/create", i.data.options, function(t) {
             if (console.log(t), 0 == t.error) {
-                console.log(t), r = i.getGoodsList(t.goods);
+              console.log(t), r = i.getGoodsList(t.goods);
                 var s = (i.data.originalprice - t.goodsprice).toFixed(2);
+                console.log(t)
                 i.setData({
                     list: t,
                     goods: t,

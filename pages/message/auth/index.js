@@ -87,7 +87,7 @@ Page({
         code: t.data.code,
       }
 
-      a.post("member/bind/submit", o, function (res) {
+      a.post("member/bind/submit_mobile", o, function (res) {
         if (0 == res.error) {
           wx.showToast({
             title: '验证成功',
